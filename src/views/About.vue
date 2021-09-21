@@ -1,18 +1,19 @@
 <template>
   <h1>About!!</h1>
   <router-link to="/">Go to home</router-link>
-  <p>数字</p>
-  <span>{{ val }}</span>
+  <p>数字a</p>
+  <span>{{ a }}</span>
+  <p>数字b</p>
+  <span>{{ b }}</span>
 </template>
 
-<script lang="ts">
-  import { defineComponent, ref } from "vue";
+<script setup>
+  import {  ref } from "vue";
+  const a = 1
+  const b = ref(2)
 
-  export default defineComponent({
-    setup: () => {
-
-      const val = ref(0);
-      return { val };
-    },
-  });
+  defineExpose({
+    a,
+    b
+  })
 </script>
