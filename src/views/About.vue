@@ -1,3 +1,21 @@
+<script setup>
+  import {  ref } from "vue";
+  const a = 1
+  const b = ref(2)
+  const count = ref(0)
+  const handleCountAdd = () => {
+    count.value += 1
+  }
+
+  defineExpose({
+    a,
+    b,
+    count,
+    handleCountAdd
+  })
+</script>
+
+
 <template>
   <h1>About!!</h1>
   <router-link to="/">Go to home</router-link>
@@ -5,15 +23,10 @@
   <span>{{ a }}</span>
   <p>数字b</p>
   <span>{{ b }}</span>
+  <p>数字count</p>
+  <span>{{ count }}</span>
+
+  <button @click="count++">count ++</button>
+  <button @click="handleCountAdd">handleCountAdd</button>
 </template>
 
-<script setup>
-  import {  ref } from "vue";
-  const a = 1
-  const b = ref(2)
-
-  defineExpose({
-    a,
-    b
-  })
-</script>
