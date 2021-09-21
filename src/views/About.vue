@@ -1,5 +1,6 @@
 <script setup>
-  import {  ref } from "vue";
+  import Test from '../components/Test.vue'
+  import { ref } from "vue";
   const a = 1
   const b = ref(2)
   const count = ref(0)
@@ -17,16 +18,16 @@
 
 
 <template>
-  <h1>About!!</h1>
-  <router-link to="/">Go to home</router-link>
-  <p>数字a</p>
-  <span>{{ a }}</span>
-  <p>数字b</p>
-  <span>{{ b }}</span>
-  <p>数字count</p>
-  <span>{{ count }}</span>
-
-  <button @click="count++">count ++</button>
-  <button @click="handleCountAdd">handleCountAdd</button>
+<h1>About!!</h1>
+<router-link to="/">Go to home</router-link>
+<Test foo="aaa" />
+<p>数字a</p>
+<span>{{ a }}</span>
+<p>数字b</p>
+<span>{{ b }}</span>
+<p>数字count</p>
+<span>{{ count }}</span>
+<button @click="count++">count ++</button>
+<button @click="handleCountAdd">handleCountAdd</button>
 </template>
 
