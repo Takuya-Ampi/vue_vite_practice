@@ -2,18 +2,28 @@
   import Test from '../components/Test.vue'
   import Slot from '../components/Slot.vue'
   import { ref } from "vue";
+  import { reduce } from '../reduce'
+
+
   const a = 1
   const b = ref(2)
   const count = ref(0)
+
+
   const handleCountAdd = () => {
     count.value += 1
+  }
+
+  const handleCountReduce = () => {
+    count.value = reduce(count.value)
   }
 
   defineExpose({
     a,
     b,
     count,
-    handleCountAdd
+    handleCountAdd,
+    handleCountReduce
   })
 </script>
 
@@ -33,5 +43,6 @@
 <span>{{ count }}</span>
 <button @click="count++">count ++</button>
 <button @click="handleCountAdd">handleCountAdd</button>
+<button @click="handleCountReduce">handleCountReduce</button>
 </template>
 
