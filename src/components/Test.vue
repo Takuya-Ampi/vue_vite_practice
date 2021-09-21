@@ -5,9 +5,6 @@
   })
 </script>
 
-
-
-
 <template>
   <h2>TEST!!</h2>
   <p>{{ foo }}</p>

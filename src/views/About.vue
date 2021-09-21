@@ -1,5 +1,6 @@
 <script setup>
   import Test from '../components/Test.vue'
+  import Slot from '../components/Slot.vue'
   import { ref } from "vue";
   const a = 1
   const b = ref(2)
@@ -21,6 +22,9 @@
 <h1>About!!</h1>
 <router-link to="/">Go to home</router-link>
 <Test foo="aaa" />
+<Slot>
+  aiueoao
+</Slot>
 <p>数字a</p>
 <span>{{ a }}</span>
 <p>数字b</p>
